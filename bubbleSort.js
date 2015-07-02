@@ -1,25 +1,22 @@
-function bubbleSort(arr){
-  var isPass = true;
-  function sort(arr){
+Array.prototype.bubbleSort = function(){
+  var isPass = false;
+
+  while(isPass === false){
     isPass = true;
-    for(var i=0; i<arr.length; i++){
-      if(arr[i] > arr[i+1]){
-        var temp = arr[i];
-        arr[i] = arr[i+1];
-        arr[i+1] = temp;
+    for(var i=0; i<this.length; i++){
+      if(this[i] > this[i+1]){
+        var temp = this[i];
+        this[i] = this[i+1];
+        this[i+1] = temp;
         isPass = false;
       }
     }
   }
-  sort(arr);
-  while(isPass === false){
-    sort(arr);
-  }
-  console.log(arr);
-}
+  console.log(this);
+};
 
-var theArray = [3, 600000000000000, 1, 2500000000000, 2000000000];
-bubbleSort(theArray);
+var theArray = [3, 6000, 1, 250, 20];
+theArray.bubbleSort();
 
 //console.log(theArrray);
 
